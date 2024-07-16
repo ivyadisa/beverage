@@ -1,37 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import DrinksList from './DrinksList';
-import SearchBar from './SearchBar';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Layout = () => {
-  const [drinks, setDrinks] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
-
-  // Fetch initial list of drinks
-  useEffect(() => {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a')
-      .then(response => response.json())
-      .then(data => setDrinks(data.drinks || []));
-  }, []);
-
-  // Handle search
-  const handleSearch = (searchTerm) => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
-      .then(response => response.json())
-      .then(data => setSearchResults(data.drinks || []));
-  };
-
+const Layout = ({ children }) => {
   return (
     <div>
-      <header className="bg-gray-800 text-white p-4 text-center text-xl">
-        Beverage Shop
+      <header className="fixed top-0 left-0 w-full bg-gray-800 text-white p-4 text-center text-lg z-50">
+        <nav>
+          <ul className="flex justify-center space-x-4">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/flavors">Flavors</Link></li>
+            <li><Link to="/products">Products</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
+          </ul>
+        </nav>
       </header>
-      <SearchBar onSearch={handleSearch} />
-      <div className="p-4">
-        {searchResults.length > 0 ? (
-          <DrinksList drinks={searchResults} />
-        ) : (
-          <DrinksList drinks={drinks} />
-        )}
+      <div className="pt-16 p-4"> {/* Adjust top padding to avoid content being hidden behind the navbar */}
+        {children}
       </div>
     </div>
   );

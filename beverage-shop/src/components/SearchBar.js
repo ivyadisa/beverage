@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+//import '/index.css'; // Import the colors CSS file
 
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +17,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search for a drink..."
         className="flex-grow p-2 border rounded"
       />
-      <button onClick={handleSearch} className="p-2 bg-blue-500 text-white rounded">
+      <button onClick={handleSearch} className="btn-custom p-2">
         Search
       </button>
     </div>

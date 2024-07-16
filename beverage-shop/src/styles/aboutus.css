@@ -1,0 +1,41 @@
+.about-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h1 {
+  color: #02282D;
+  margin-top: 20px;
+}
+
+.about-content h2 {
+  color: #FF6600;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.social-icon:hover {
+  transform: scale(1.2); 
+}

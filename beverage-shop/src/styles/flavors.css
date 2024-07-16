@@ -1,0 +1,30 @@
+.flavors-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.flavor-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flavor-card img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.flavor-name {
+  font-size: 1.5rem;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
